@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0d11">
+    <meta name="description" content="Portfólio e vitrine comercial de Jonas: TV Digital Ao Vivo, Central de Rádios para Lojas, Painéis Corporativos e Sistemas Web leves.">
+    <title>Jonas Digital • Sistemas de TV, Rádios e Painéis Sob Medida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-canvas: #0b0d11;
+            --bg-surface: #12161f;
+            --bg-elevated: #181e29;
+            --ink-primary: #f4f1ea;
+            --ink-secondary: #a1abbc;
+            --ink-muted: #707b8e;
+            --accent: #10b981;
+            --accent-ink: #051b13;
+            --accent-tint: rgba(16, 185, 129, 0.12);
+            --amber: #eab308;
+            --line-subtle: rgba(244, 241, 234, 0.09);
+            --line-strong: rgba(244, 241, 234, 0.2);
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-serif: 'Instrument Serif', Georgia, serif;
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --shadow-card: 0 18px 40px -18px rgba(0, 0, 0, 0.65);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            overflow-x: clip;
+            background-color: var(--bg-canvas);
+            color: var(--ink-primary);
+            font-family: var(--font-sans);
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+            scrollbar-color: rgba(16, 185, 129, 0.4) var(--bg-canvas);
+        }
+
+        ::selection {
+            background-color: var(--accent-tint);
+            color: var(--ink-primary);
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* CABEÇALHO EDITORIAL */
+        header {
+            border-bottom: 1px solid var(--line-subtle);
+            background-color: var(--bg-canvas);
+            position: sticky;
+            top: 0;
+            z-index: 30;
+        }
+        .nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            height: 68px;
+        }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: -0.02em;
+            color: var(--ink-primary);
+        }
+        .brand-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--ink-secondary);
+        }
+        .nav-links a:hover {
+            color: var(--ink-primary);
+        }
+        .btn-cta-sm {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 16px;
+            border-radius: var(--radius-sm);
+            background-color: var(--accent);
+            color: var(--accent-ink);
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            border: none;
+            transition: opacity 0.16s ease, transform 0.12s ease;
+        }
+        .btn-cta-sm:hover {
+            opacity: 0.9;
+        }
+        .btn-cta-sm:active {
+            transform: scale(0.97);
+        }
+
+        /* HERO PRINCIPAL — UMA IDEIA POR TELA */
+        .hero {
+            padding: 76px 0 64px;
+            border-bottom: 1px solid var(--line-subtle);
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr);
+            gap: 48px;
+            align-items: center;
+        }
+        .hero-title {
+            font-size: clamp(2.25rem, 4.4vw, 3.65rem);
+            font-weight: 800;
+            line-height: 1.07;
+            letter-spacing: -0.035em;
+            color: var(--ink-primary);
+            overflow-wrap: break-word;
+            min-width: 0;
+        }
+        .hero-title-serif {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--accent);
+        }
+        .hero-lead {
+            margin-top: 20px;
+            font-size: 17px;
+            color: var(--ink-secondary);
+            max-width: 58ch;
+        }
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 22px;
+            border-radius: var(--radius-sm);
+            background-color: var(--accent);
+            color: var(--accent-ink);
+            font-size: 14.5px;
+            font-weight: 800;
+            cursor: pointer;
+            border: none;
+            transition: opacity 0.16s ease, transform 0.12s ease;
+        }
+        .btn-primary:hover {
+            opacity: 0.92;
+        }
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 20px;
+            border-radius: var(--radius-sm);
+            background-color: var(--bg-surface);
+            border: 1px solid var(--line-strong);
+            color: var(--ink-primary);
+            font-size: 14.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.16s ease, border-color 0.16s ease;
+        }
+        .btn-secondary:hover {
+            background-color: var(--bg-elevated);
+            border-color: var(--ink-secondary);
+        }
+
+        /* CARTÃO DE PROVA AO VIVO NO HERO */
+        .hero-showcase {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .showcase-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--line-subtle);
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--ink-secondary);
+        }
+        .status-online {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+        }
+        .status-online::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--accent);
+        }
+        .demo-link-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 14px;
+            border-radius: var(--radius-sm);
+            background-color: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            transition: border-color 0.16s ease, background-color 0.16s ease;
+        }
+        .demo-link-row:hover {
+            border-color: var(--accent);
+            background-color: var(--bg-elevated);
+        }
+        .demo-name {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--ink-primary);
+        }
+        .demo-meta {
+            font-size: 12.5px;
+            color: var(--ink-secondary);
+        }
+        .demo-arrow {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        .showcase-foot {
+            padding-top: 6px;
+            font-size: 12px;
+            color: var(--ink-muted);
+            display: flex;
+            justify-content: space-between;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* SEÇÃO DE PROJETOS PRONTOS */
+        section {
+            padding: 68px 0;
+            border-bottom: 1px solid var(--line-subtle);
+        }
+        .section-head {
+            max-width: 64ch;
+            margin-bottom: 36px;
+        }
+        .section-title {
+            font-size: clamp(1.65rem, 2.8vw, 2.25rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            color: var(--ink-primary);
+        }
+        .section-desc {
+            margin-top: 10px;
+            font-size: 15.5px;
+            color: var(--ink-secondary);
+        }
+
+        .projects-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+        .project-panel {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius-md);
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+            transition: border-color 0.16s ease;
+        }
+        .project-panel:hover {
+            border-color: var(--line-strong);
+        }
+        .project-tag {
+            display: inline-block;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .project-tag.sob-medida {
+            color: var(--amber);
+        }
+        .project-panel h3 {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--ink-primary);
+        }
+        .project-panel p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--ink-secondary);
+        }
+        .feature-bullets {
+            margin-top: 14px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--ink-secondary);
+        }
+        .feature-bullets li::before {
+            content: '— ';
+            color: var(--accent);
+            font-weight: 800;
+        }
+        .panel-foot {
+            padding-top: 14px;
+            border-top: 1px solid var(--line-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .price-hint {
+            font-size: 13px;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            color: var(--ink-primary);
+        }
+
+        /* MONTADOR DE ORÇAMENTO RÁPIDO */
+        .quote-box {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 32px;
+            align-items: start;
+        }
+        .quote-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .quote-opt {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 13px 15px;
+            border-radius: var(--radius-sm);
+            background-color: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            cursor: pointer;
+            text-align: left;
+            color: var(--ink-primary);
+            font-family: inherit;
+            transition: border-color 0.16s ease, background-color 0.16s ease;
+        }
+        .quote-opt:hover {
+            border-color: var(--line-strong);
+        }
+        .quote-opt.selected {
+            border-color: var(--accent);
+            background-color: var(--accent-tint);
+        }
+        .quote-opt-title {
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .quote-opt-sub {
+            font-size: 12px;
+            color: var(--ink-secondary);
+            margin-top: 2px;
+        }
+        .quote-opt-price {
+            font-size: 14px;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        .quote-summary {
+            background-color: var(--bg-canvas);
+            border: 1px solid var(--line-subtle);
+            border-radius: var(--radius-sm);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .quote-total-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--ink-secondary);
+        }
+        .quote-total-value {
+            font-size: 32px;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -0.03em;
+            color: var(--ink-primary);
+        }
+        .quote-preview {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--line-subtle);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 13px;
+            color: var(--ink-secondary);
+            line-height: 1.5;
+        }
+        .input-client {
+            width: 100%;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--line-strong);
+            color: var(--ink-primary);
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 13.5px;
+        }
+
+        footer {
+            padding: 32px 0;
+            font-size: 13px;
+            color: var(--ink-muted);
+        }
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        @media (max-width: 860px) {
+            .hero { padding: 48px 0; }
+            .hero-grid,
+            .projects-list,
+            .quote-box {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-row">
+            <a href="#" class="brand">
+                <span class="brand-dot" aria-hidden="true"></span>
+                <span>Jonas Digital</span>
+            </a>
+            <nav class="nav-links" aria-label="Navegação principal">
+                <a href="#sistemas">Sistemas ao Vivo</a>
+                <a href="#modelos">Soluções para Lojas</a>
+                <a href="#orcamento">Pedir Orçamento</a>
+            </nav>
+            <a href="#orcamento" class="btn-cta-sm">Solicitar Sistema</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <h1 class="hero-title">
+                        Sistemas leves de <span class="hero-title-serif">TV ao vivo, rádios e painéis</span> prontos para rodar.
+                    </h1>
+                    <p class="hero-lead">
+                        Páginas rápidas que funcionam no celular, computador ou Smart TV sem mensalidade cara, com manutenção automática e controle remoto pelo celular.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="https://jonasskynet-eng.github.io/cine-pro-tv-2026/" target="_blank" rel="noopener" class="btn-primary">Abrir CinePro TV 2026</a>
+                        <a href="https://jonasskynet-eng.github.io/central-radios-pro/" target="_blank" rel="noopener" class="btn-secondary">Abrir Central de Rádios</a>
+                    </div>
+                </div>
+
+                <div class="hero-showcase" aria-label="Demonstrações funcionando agora">
+                    <div class="showcase-head">
+                        <span>Testar agora no navegador</span>
+                        <span class="status-online">No ar</span>
+                    </div>
+                    <a href="https://jonasskynet-eng.github.io/cine-pro-tv-2026/" target="_blank" rel="noopener" class="demo-link-row">
+                        <div>
+                            <div class="demo-name">CinePro TV 2026</div>
+                            <div class="demo-meta">Player leve (160 KB), Mosaico, Guia XMLTV e Controle QR</div>
+                        </div>
+                        <span class="demo-arrow">Abrir ↗</span>
+                    </a>
+                    <a href="https://jonasskynet-eng.github.io/central-radios-pro/" target="_blank" rel="noopener" class="demo-link-row">
+                        <div>
+                            <div class="demo-name">RádioPro Brasil</div>
+                            <div class="demo-meta">28 rádios FM brasileiras ao vivo + Bluetooth do carro</div>
+                        </div>
+                        <span class="demo-arrow">Abrir ↗</span>
+                    </a>
+                    <a href="https://jonasskynet-eng.github.io/central-radios-pro/?loja=1" target="_blank" rel="noopener" class="demo-link-row">
+                        <div>
+                            <div class="demo-name">Modo Som Ambiente para Lojas</div>
+                            <div class="demo-meta">Tela travada para balcão de mercados, clínicas e barbearias</div>
+                        </div>
+                        <span class="demo-arrow">Testar ↗</span>
+                    </a>
+                    <div class="showcase-foot">
+                        <span>100% Web • Sem instalar programas</span>
+                        <span>Entrega pronta para uso</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sistemas">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Projetos em produção e modelos sob medida</h2>
+                    <p class="section-desc">
+                        Cada projeto abre direto no navegador ou pode ser instalado como aplicativo no celular. Você pode testar os demos ao vivo antes de encomendar a versão personalizada com o nome da sua empresa.
+                    </p>
+                </div>
+
+                <div class="projects-list" id="modelos">
+                    <article class="project-panel">
+                        <div>
+                            <span class="project-tag">Sistema no ar • Demonstração aberta</span>
+                            <h3>CinePro TV 2026</h3>
+                            <p>Central completa de TV ao vivo com carregamento rápido, busca por nome ou número e troca de canal pelo celular via QR Code ou voz.</p>
+                            <ul class="feature-bullets">
+                                <li>Modo Mosaico para assistir até 4 canais juntos</li>
+                                <li>Guia de programação real atualizado todos os dias</li>
+                                <li>Categoria de recentes e retomada automática do último canal</li>
+                            </ul>
+                        </div>
+                        <div class="panel-foot">
+                            <span class="price-hint">A partir de R$ 180</span>
+                            <a href="https://jonasskynet-eng.github.io/cine-pro-tv-2026/" target="_blank" rel="noopener" class="btn-secondary" style="padding:8px 14px; font-size:13px;">Ver ao vivo ↗</a>
+                        </div>
+                    </article>
+
+                    <article class="project-panel">
+                        <div>
+                            <span class="project-tag">Sistema no ar • Demonstração aberta</span>
+                            <h3>Central de Rádios &amp; Som Ambiente</h3>
+                            <p>Leitor de rádios FM brasileiras com visual de estúdio em apenas 39 KB. Ideal para ouvir no trânsito ou tocar som ambiente contínuo no comércio.</p>
+                            <ul class="feature-bullets">
+                                <li>Botão Modo Loja para travar troca acidental no balcão</li>
+                                <li>Funciona com tela bloqueada e comandos no carro</li>
+                                <li>Timer de desligamento e lista para rádios personalizadas</li>
+                            </ul>
+                        </div>
+                        <div class="panel-foot">
+                            <span class="price-hint">A partir de R$ 150</span>
+                            <a href="https://jonasskynet-eng.github.io/central-radios-pro/" target="_blank" rel="noopener" class="btn-secondary" style="padding:8px 14px; font-size:13px;">Ver ao vivo ↗</a>
+                        </div>
+                    </article>
+
+                    <article class="project-panel">
+                        <div>
+                            <span class="project-tag sob-medida">Sob medida para comércios</span>
+                            <h3>TV Corporativa para Lojas &amp; Clínicas</h3>
+                            <p>Painel de parede com modo tela limpa (?kiosk=1) para salas de espera, barbearias e lanchonetes com a marca e cores do seu negócio.</p>
+                            <ul class="feature-bullets">
+                                <li>Abre direto em tela cheia sem menus nem distrações</li>
+                                <li>Troca rápida por controle remoto no celular do gerente</li>
+                                <li>Entrega em link próprio ou pacote pronto offline</li>
+                            </ul>
+                        </div>
+                        <div class="panel-foot">
+                            <span class="price-hint">Sob medida • R$ 150+</span>
+                            <button type="button" class="btn-secondary" style="padding:8px 14px; font-size:13px;" onclick="selecionarModelo('TV Corporativa para Lojas e Clínicas', 180)">Escolher este</button>
+                        </div>
+                    </article>
+
+                    <article class="project-panel">
+                        <div>
+                            <span class="project-tag sob-medida">Sob medida para famílias</span>
+                            <h3>TV Segura (Infantil ou Temática)</h3>
+                            <p>Versão fechada com apenas canais selecionados — só desenhos educativos ou só conteúdo religioso/musical — segura para crianças e idosos.</p>
+                            <ul class="feature-bullets">
+                                <li>Interface simples com botões grandes e fáceis de ler</li>
+                                <li>Sem risco de abrir canais indesejados</li>
+                                <li>Instalável direto na tela inicial do celular ou tablet</li>
+                            </ul>
+                        </div>
+                        <div class="panel-foot">
+                            <span class="price-hint">Sob medida • R$ 150+</span>
+                            <button type="button" class="btn-secondary" style="padding:8px 14px; font-size:13px;" onclick="selecionarModelo('TV Segura Infantil ou Temática', 150)">Escolher este</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="orcamento">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Monte seu pedido em 10 segundos</h2>
+                    <p class="section-desc">
+                        Escolha o modelo abaixo, coloque o nome da sua empresa ou projeto e gere a mensagem pronta para combinar a entrega.
+                    </p>
+                </div>
+
+                <div class="quote-box">
+                    <div class="quote-options" id="quoteOptions">
+                        <button type="button" class="quote-opt selected" data-name="Central de Rádios Som Ambiente" data-price="150" onclick="selecionarOpcao(this)">
+                            <div>
+                                <div class="quote-opt-title">Central de Rádios &amp; Som Ambiente</div>
+                                <div class="quote-opt-sub">Personalizada com seu logo e suas rádios favoritas</div>
+                            </div>
+                            <span class="quote-opt-price">R$ 150</span>
+                        </button>
+                        <button type="button" class="quote-opt" data-name="TV Segura Infantil ou Temática" data-price="150" onclick="selecionarOpcao(this)">
+                            <div>
+                                <div class="quote-opt-title">TV Segura (Infantil ou Temática)</div>
+                                <div class="quote-opt-sub">Catálogo fechado e interface simplificada</div>
+                            </div>
+                            <span class="quote-opt-price">R$ 150</span>
+                        </button>
+                        <button type="button" class="quote-opt" data-name="TV Corporativa para Lojas e Clínicas" data-price="180" onclick="selecionarOpcao(this)">
+                            <div>
+                                <div class="quote-opt-title">TV Corporativa para Lojas &amp; Clínicas</div>
+                                <div class="quote-opt-sub">Modo Kiosk tela limpa + controle pelo celular</div>
+                            </div>
+                            <span class="quote-opt-price">R$ 180</span>
+                        </button>
+                        <button type="button" class="quote-opt" data-name="Central Completa CinePro TV Personalizada" data-price="250" onclick="selecionarOpcao(this)">
+                            <div>
+                                <div class="quote-opt-title">Central Completa CinePro TV + Guia Real</div>
+                                <div class="quote-opt-sub">Mosaico, Guia XMLTV, Modo Casa e robô diário</div>
+                            </div>
+                            <span class="quote-opt-price">R$ 250</span>
+                        </button>
+                    </div>
+
+                    <div class="quote-summary">
+                        <div>
+                            <div class="quote-total-label">Investimento estimado (pagamento único)</div>
+                            <div class="quote-total-value" id="quotePrice">R$ 150</div>
+                        </div>
+                        <input type="text" id="clientBizInput" class="input-client" placeholder="Nome da sua loja ou projeto (opcional)">
+                        <div class="quote-preview" id="quotePreview"></div>
+                        <button type="button" class="btn-primary" style="width:100%; justify-content:center;" onclick="copiarPedido()">📋 Copiar Mensagem do Pedido</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-row">
+            <span>Jonas Digital • Sistemas Web Leves &amp; Automação</span>
+            <span>Projetos no ar: CinePro TV 2026 • RádioPro Brasil</span>
+        </div>
+    </footer>
+
+    <script>
+        let modeloAtual = 'Central de Rádios Som Ambiente';
+        let valorAtual = 150;
+
+        function atualizarResumoPedido() {
+            const biz = (document.getElementById('clientBizInput').value || '').trim();
+            document.getElementById('quotePrice').textContent = `R$ ${valorAtual}`;
+            const complemento = biz ? ` para "${biz}"` : '';
+            document.getElementById('quotePreview').textContent =
+                `Olá, Jonas! Tenho interesse no sistema "${modeloAtual}"${complemento} (valor base R$ ${valorAtual}). Quero combinar a personalização e entrega.`;
+        }
+
+        function selecionarOpcao(btn) {
+            document.querySelectorAll('.quote-opt').forEach(el => el.classList.remove('selected'));
+            btn.classList.add('selected');
+            modeloAtual = btn.getAttribute('data-name') || modeloAtual;
+            valorAtual = parseInt(btn.getAttribute('data-price') || '150', 10);
+            atualizarResumoPedido();
+        }
+
+        function selecionarModelo(nome, preco) {
+            modeloAtual = nome;
+            valorAtual = preco;
+            document.querySelectorAll('.quote-opt').forEach(el => {
+                el.classList.toggle('selected', el.getAttribute('data-name') === nome);
+            });
+            atualizarResumoPedido();
+            document.getElementById('orcamento').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copiarPedido() {
+            const texto = document.getElementById('quotePreview').textContent;
+            navigator.clipboard.writeText(texto).then(() => {
+                const btn = document.querySelector('#orcamento .btn-primary');
+                if (btn) {
+                    const orig = btn.textContent;
+                    btn.textContent = '✅ Pedido copiado! Agora cole no WhatsApp';
+                    setTimeout(() => { btn.textContent = orig; }, 2400);
+                }
+            }).catch(() => {});
+        }
+
+        document.getElementById('clientBizInput').addEventListener('input', atualizarResumoPedido);
+        atualizarResumoPedido();
+    </script>
+</body>
+</html>
