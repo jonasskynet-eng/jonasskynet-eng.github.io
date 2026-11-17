@@ -465,6 +465,31 @@
             font-family: inherit;
             font-size: 13.5px;
         }
+        .quote-actions-sec {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+        .quote-actions-sec .btn-secondary {
+            justify-content: center;
+            padding: 10px 12px;
+            font-size: 13px;
+        }
+        .quote-contact-line {
+            font-size: 12px;
+            color: var(--ink-muted);
+            text-align: center;
+            line-height: 1.5;
+        }
+        .quote-contact-line a,
+        .footer-links a {
+            color: var(--ink-secondary);
+            transition: color 0.16s ease;
+        }
+        .quote-contact-line a:hover,
+        .footer-links a:hover {
+            color: var(--accent);
+        }
 
         footer {
             padding: 32px 0;
@@ -686,7 +711,14 @@
                         </div>
                         <input type="text" id="clientBizInput" class="input-client" placeholder="Nome da sua loja ou projeto (opcional)">
                         <div class="quote-preview" id="quotePreview"></div>
-                        <button type="button" class="btn-primary" style="width:100%; justify-content:center;" onclick="copiarPedido()">📋 Copiar Mensagem do Pedido</button>
+                        <a id="btnWhatsAppOrder" href="https://wa.me/5511966707293" target="_blank" rel="noopener" class="btn-primary" style="width:100%; justify-content:center;">💬 Enviar Pedido no WhatsApp</a>
+                        <div class="quote-actions-sec">
+                            <a id="btnEmailOrder" href="mailto:jonas.skynet@gmail.com" class="btn-secondary">✉️ Enviar por E-mail</a>
+                            <button type="button" id="btnCopyOrder" class="btn-secondary" onclick="copiarPedido()">📋 Copiar Mensagem</button>
+                        </div>
+                        <div class="quote-contact-line">
+                            Atendimento direto: <a href="https://wa.me/5511966707293" target="_blank" rel="noopener">(11) 96670-7293</a> • <a href="mailto:jonas.skynet@gmail.com">jonas.skynet@gmail.com</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -696,11 +728,16 @@
     <footer>
         <div class="container footer-row">
             <span>Jonas Digital • Sistemas Web Leves &amp; Automação</span>
-            <span>Projetos no ar: CinePro TV 2026 • RádioPro Brasil</span>
+            <span class="footer-links">
+                <a href="https://wa.me/5511966707293" target="_blank" rel="noopener">WhatsApp (11) 96670-7293</a> •
+                <a href="mailto:jonas.skynet@gmail.com">jonas.skynet@gmail.com</a>
+            </span>
         </div>
     </footer>
 
     <script>
+        const CONTATO_WHATS = '5511966707293';
+        const CONTATO_EMAIL = 'jonas.skynet@gmail.com';
         let modeloAtual = 'Central de Rádios Som Ambiente';
         let valorAtual = 150;
 
@@ -708,8 +745,18 @@
             const biz = (document.getElementById('clientBizInput').value || '').trim();
             document.getElementById('quotePrice').textContent = `R$ ${valorAtual}`;
             const complemento = biz ? ` para "${biz}"` : '';
-            document.getElementById('quotePreview').textContent =
-                `Olá, Jonas! Tenho interesse no sistema "${modeloAtual}"${complemento} (valor base R$ ${valorAtual}). Quero combinar a personalização e entrega.`;
+            const mensagem = `Olá, Jonas! Tenho interesse no sistema "${modeloAtual}"${complemento} (valor base R$ ${valorAtual}). Quero combinar a personalização e entrega.`;
+            document.getElementById('quotePreview').textContent = mensagem;
+
+            const btnWhats = document.getElementById('btnWhatsAppOrder');
+            if (btnWhats) {
+                btnWhats.href = `https://wa.me/${CONTATO_WHATS}?text=${encodeURIComponent(mensagem)}`;
+            }
+            const btnEmail = document.getElementById('btnEmailOrder');
+            if (btnEmail) {
+                const assunto = `Orçamento - ${modeloAtual}${complemento}`;
+                btnEmail.href = `mailto:${CONTATO_EMAIL}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(mensagem)}`;
+            }
         }
 
         function selecionarOpcao(btn) {
@@ -733,10 +780,10 @@
         function copiarPedido() {
             const texto = document.getElementById('quotePreview').textContent;
             navigator.clipboard.writeText(texto).then(() => {
-                const btn = document.querySelector('#orcamento .btn-primary');
+                const btn = document.getElementById('btnCopyOrder');
                 if (btn) {
                     const orig = btn.textContent;
-                    btn.textContent = '✅ Pedido copiado! Agora cole no WhatsApp';
+                    btn.textContent = '✅ Mensagem copiada!';
                     setTimeout(() => { btn.textContent = orig; }, 2400);
                 }
             }).catch(() => {});
