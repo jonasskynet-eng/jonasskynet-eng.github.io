@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0b0d11">
-    <meta name="description" content="Portfólio e vitrine comercial de Jonas: TV Digital Ao Vivo, Central de Rádios para Lojas, Painéis Corporativos e Sistemas Web leves.">
-    <title>Jonas Digital • Sistemas de TV, Rádios e Painéis Sob Medida</title>
+    <meta name="description" content="Jonas Tech Store • Loja Oficial de Sistemas Comerciais PDV, Robô WhatsApp 24/7, TV Digital, Otimização de PC e Achadinhos Mercado Livre.">
+    <title>Jonas Tech Store • Sistemas, Automação & Loja Oficial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,10 @@
             --accent: #10b981;
             --accent-ink: #051b13;
             --accent-tint: rgba(16, 185, 129, 0.12);
-            --amber: #eab308;
+            --amber: #f59e0b;
+            --blue: #38bdf8;
+            --meli-yellow: #ffe600;
+            --meli-ink: #2d3277;
             --line-subtle: rgba(244, 241, 234, 0.09);
             --line-strong: rgba(244, 241, 234, 0.2);
             --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -63,32 +66,33 @@
 
         .container {
             width: 100%;
-            max-width: 1120px;
+            max-width: 1160px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* CABEÇALHO EDITORIAL */
+        /* CABEÇALHO */
         header {
             border-bottom: 1px solid var(--line-subtle);
-            background-color: var(--bg-canvas);
+            background-color: rgba(11, 13, 17, 0.92);
+            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
-            z-index: 30;
+            z-index: 40;
         }
         .nav-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            height: 68px;
+            height: 70px;
         }
         .brand {
             display: inline-flex;
             align-items: center;
             gap: 10px;
             font-weight: 800;
-            font-size: 15px;
+            font-size: 16px;
             letter-spacing: -0.02em;
             color: var(--ink-primary);
         }
@@ -97,58 +101,79 @@
             height: 10px;
             border-radius: 50%;
             background-color: var(--accent);
+            box-shadow: 0 0 12px var(--accent);
         }
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 20px;
             font-size: 13.5px;
             font-weight: 600;
             color: var(--ink-secondary);
         }
         .nav-links a:hover {
-            color: var(--ink-primary);
+            color: var(--accent);
         }
         .btn-cta-sm {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 9px 16px;
+            gap: 6px;
+            padding: 9px 18px;
             border-radius: var(--radius-sm);
             background-color: var(--accent);
             color: var(--accent-ink);
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 800;
             cursor: pointer;
             border: none;
             transition: opacity 0.16s ease, transform 0.12s ease;
         }
         .btn-cta-sm:hover {
-            opacity: 0.9;
+            opacity: 0.92;
         }
         .btn-cta-sm:active {
             transform: scale(0.97);
         }
 
-        /* HERO PRINCIPAL — UMA IDEIA POR TELA */
+        /* HERO PRINCIPAL */
         .hero {
-            padding: 76px 0 64px;
+            padding: 64px 0 54px;
             border-bottom: 1px solid var(--line-subtle);
         }
         .hero-grid {
             display: grid;
-            grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr);
-            gap: 48px;
+            grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
+            gap: 40px;
             align-items: center;
         }
+        .badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background-color: var(--accent-tint);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .badge-live::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+        }
         .hero-title {
-            font-size: clamp(2.25rem, 4.4vw, 3.65rem);
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
             font-weight: 800;
-            line-height: 1.07;
+            line-height: 1.08;
             letter-spacing: -0.035em;
             color: var(--ink-primary);
-            overflow-wrap: break-word;
-            min-width: 0;
         }
         .hero-title-serif {
             font-family: var(--font-serif);
@@ -157,13 +182,13 @@
             color: var(--accent);
         }
         .hero-lead {
-            margin-top: 20px;
-            font-size: 17px;
+            margin-top: 18px;
+            font-size: 16.5px;
             color: var(--ink-secondary);
-            max-width: 58ch;
+            max-width: 54ch;
         }
         .hero-actions {
-            margin-top: 30px;
+            margin-top: 26px;
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
@@ -185,9 +210,6 @@
         .btn-primary:hover {
             opacity: 0.92;
         }
-        .btn-primary:active {
-            transform: scale(0.98);
-        }
         .btn-secondary {
             display: inline-flex;
             align-items: center;
@@ -207,7 +229,7 @@
             border-color: var(--ink-secondary);
         }
 
-        /* CARTÃO DE PROVA AO VIVO NO HERO */
+        /* VITRINE DIREITA NO HERO */
         .hero-showcase {
             background-color: var(--bg-surface);
             border: 1px solid var(--line-subtle);
@@ -216,37 +238,24 @@
             box-shadow: var(--shadow-card);
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
         }
         .showcase-head {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-bottom: 12px;
+            padding-bottom: 10px;
             border-bottom: 1px solid var(--line-subtle);
             font-size: 12.5px;
             font-weight: 700;
             color: var(--ink-secondary);
-        }
-        .status-online {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--accent);
-        }
-        .status-online::before {
-            content: '';
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background-color: var(--accent);
         }
         .demo-link-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 12px;
-            padding: 12px 14px;
+            padding: 11px 14px;
             border-radius: var(--radius-sm);
             background-color: var(--bg-canvas);
             border: 1px solid var(--line-subtle);
@@ -257,40 +266,41 @@
             background-color: var(--bg-elevated);
         }
         .demo-name {
-            font-size: 14.5px;
+            font-size: 14px;
             font-weight: 700;
             color: var(--ink-primary);
         }
         .demo-meta {
-            font-size: 12.5px;
+            font-size: 12px;
             color: var(--ink-secondary);
         }
         .demo-arrow {
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 800;
             color: var(--accent);
             flex-shrink: 0;
         }
-        .showcase-foot {
-            padding-top: 6px;
-            font-size: 12px;
-            color: var(--ink-muted);
-            display: flex;
-            justify-content: space-between;
-            font-variant-numeric: tabular-nums;
-        }
 
-        /* SEÇÃO DE PROJETOS PRONTOS */
+        /* SEÇÕES GERAIS */
         section {
-            padding: 68px 0;
+            padding: 64px 0;
             border-bottom: 1px solid var(--line-subtle);
         }
         .section-head {
-            max-width: 64ch;
-            margin-bottom: 36px;
+            max-width: 68ch;
+            margin-bottom: 34px;
+        }
+        .section-tag {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 6px;
+            display: inline-block;
         }
         .section-title {
-            font-size: clamp(1.65rem, 2.8vw, 2.25rem);
+            font-size: clamp(1.65rem, 2.7vw, 2.25rem);
             font-weight: 800;
             letter-spacing: -0.025em;
             line-height: 1.15;
@@ -302,9 +312,15 @@
             color: var(--ink-secondary);
         }
 
+        /* GRID DE PRODUTOS */
         .projects-list {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+        .projects-list-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 20px;
         }
         .project-panel {
@@ -315,11 +331,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            gap: 20px;
-            transition: border-color 0.16s ease;
+            gap: 18px;
+            transition: border-color 0.16s ease, transform 0.16s ease;
         }
         .project-panel:hover {
             border-color: var(--line-strong);
+            transform: translateY(-2px);
         }
         .project-tag {
             display: inline-block;
@@ -328,8 +345,14 @@
             color: var(--accent);
             margin-bottom: 8px;
         }
-        .project-tag.sob-medida {
+        .project-tag.comercial {
             color: var(--amber);
+        }
+        .project-tag.meli {
+            color: #ffe600;
+            background: rgba(255, 230, 0, 0.1);
+            padding: 3px 8px;
+            border-radius: 6px;
         }
         .project-panel h3 {
             font-size: 20px;
@@ -341,6 +364,7 @@
             margin-top: 8px;
             font-size: 14px;
             color: var(--ink-secondary);
+            line-height: 1.5;
         }
         .feature-bullets {
             margin-top: 14px;
@@ -352,47 +376,96 @@
             color: var(--ink-secondary);
         }
         .feature-bullets li::before {
-            content: '— ';
+            content: '✓ ';
             color: var(--accent);
             font-weight: 800;
         }
         .panel-foot {
-            padding-top: 14px;
+            padding-top: 16px;
             border-top: 1px solid var(--line-subtle);
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 12px;
         }
-        .price-hint {
-            font-size: 13px;
+        .price-tag {
+            display: flex;
+            flex-direction: column;
+        }
+        .price-label {
+            font-size: 11px;
+            color: var(--ink-muted);
+            text-transform: uppercase;
             font-weight: 700;
-            font-variant-numeric: tabular-nums;
+        }
+        .price-value {
+            font-size: 19px;
+            font-weight: 800;
             color: var(--ink-primary);
+            font-variant-numeric: tabular-nums;
         }
 
-        /* MONTADOR DE ORÇAMENTO RÁPIDO */
+        /* CARD DESTAQUE MERCADO LIVRE */
+        .meli-banner {
+            background: linear-gradient(135deg, rgba(255, 230, 0, 0.08) 0%, rgba(18, 22, 31, 0.95) 100%);
+            border: 1px solid rgba(255, 230, 0, 0.3);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .meli-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 800;
+            color: #ffe600;
+        }
+        .btn-meli {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 20px;
+            border-radius: var(--radius-sm);
+            background-color: #ffe600;
+            color: #2d3277;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            border: none;
+            transition: opacity 0.16s ease;
+        }
+        .btn-meli:hover {
+            opacity: 0.92;
+        }
+
+        /* MONTADOR DE PEDIDO / ORÇAMENTO */
         .quote-box {
             background-color: var(--bg-surface);
             border: 1px solid var(--line-subtle);
             border-radius: var(--radius-md);
-            padding: 30px;
+            padding: 28px;
             display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-            gap: 32px;
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+            gap: 28px;
             align-items: start;
         }
         .quote-options {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 9px;
         }
         .quote-opt {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 12px;
-            padding: 13px 15px;
+            padding: 12px 15px;
             border-radius: var(--radius-sm);
             background-color: var(--bg-canvas);
             border: 1px solid var(--line-subtle);
@@ -481,18 +554,35 @@
             text-align: center;
             line-height: 1.5;
         }
-        .quote-contact-line a,
-        .footer-links a {
-            color: var(--ink-secondary);
-            transition: color 0.16s ease;
+
+        /* BOTÃO FLUTUANTE DE WHATSAPP */
+        .btn-whatsapp-floating {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 30px;
+            background-color: #25d366;
+            color: #051b13;
+            font-size: 14px;
+            font-weight: 800;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: transform 0.16s ease, box-shadow 0.16s ease;
+            text-decoration: none;
         }
-        .quote-contact-line a:hover,
-        .footer-links a:hover {
-            color: var(--accent);
+        .btn-whatsapp-floating:hover {
+            transform: scale(1.04);
+            box-shadow: 0 14px 30px rgba(37, 211, 102, 0.55);
         }
 
+        /* FOOTER */
         footer {
-            padding: 32px 0;
+            padding: 36px 0;
             font-size: 13px;
             color: var(--ink-muted);
         }
@@ -501,209 +591,384 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
+            gap: 16px;
         }
 
-        @media (max-width: 860px) {
-            .hero { padding: 48px 0; }
+        @media (max-width: 920px) {
             .hero-grid,
             .projects-list,
+            .projects-list-3,
             .quote-box {
                 grid-template-columns: 1fr;
-                gap: 24px;
+                gap: 20px;
             }
             .nav-links { display: none; }
+            .btn-whatsapp-floating span { display: none; }
+            .btn-whatsapp-floating { padding: 14px; border-radius: 50%; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <div class="container nav-row">
             <a href="#" class="brand">
                 <span class="brand-dot" aria-hidden="true"></span>
-                <span>Jonas Digital</span>
+                <span>Jonas Tech Store</span>
             </a>
             <nav class="nav-links" aria-label="Navegação principal">
-                <a href="#sistemas">Sistemas ao Vivo</a>
-                <a href="#modelos">Soluções para Lojas</a>
-                <a href="#orcamento">Pedir Orçamento</a>
+                <a href="#comercial">Sistemas PDV</a>
+                <a href="#achadinhos">Achadinhos Mercado Livre</a>
+                <a href="#streaming">CinePro TV</a>
+                <a href="#windows">Windows Boost</a>
+                <a href="#orcamento">Pedir no PIX</a>
             </nav>
-            <a href="#orcamento" class="btn-cta-sm">Solicitar Sistema</a>
+            <a href="#orcamento" class="btn-cta-sm">💬 Comprar / Pedir</a>
         </div>
     </header>
 
     <main>
+        <!-- HERO PRINCIPAL -->
         <section class="hero">
             <div class="container hero-grid">
                 <div>
+                    <div class="badge-live">Tecnologia, Automação & Loja Oficial</div>
                     <h1 class="hero-title">
-                        Sistemas leves de <span class="hero-title-serif">TV ao vivo, rádios e painéis</span> prontos para rodar.
+                        Sistemas comerciais, <span class="hero-title-serif">robôs de WhatsApp</span> e produtos recomendados.
                     </h1>
                     <p class="hero-lead">
-                        Páginas rápidas que funcionam no celular, computador ou Smart TV sem mensalidade cara, com manutenção automática e controle remoto pelo celular.
+                        Soluções práticas para comércios locais, ferramentas de produtividade e achadinhos testados com compra segura direto no Mercado Livre.
                     </p>
                     <div class="hero-actions">
-                        <a href="https://jonasskynet-eng.github.io/cine-pro-tv-2026/" target="_blank" rel="noopener" class="btn-primary">Abrir CinePro TV 2026</a>
-                        <a href="https://jonasskynet-eng.github.io/windows-boost-pro/vitrine.html" target="_blank" rel="noopener" class="btn-secondary">⚡ Windows Boost Pro</a>
-                        <a href="https://jonasskynet-eng.github.io/central-radios-pro/" target="_blank" rel="noopener" class="btn-secondary">Central de Rádios</a>
+                        <a href="#comercial" class="btn-primary">Ver Sistemas PDV (PIX)</a>
+                        <a href="#achadinhos" class="btn-secondary">🛍️ Achadinhos Mercado Livre</a>
+                        <a href="https://wa.me/5511966707293?text=Ol%C3%A1%20Jonas%2C%20quero%20conhecer%20seus%20sistemas!" target="_blank" rel="noopener" class="btn-secondary">Falar no WhatsApp</a>
                     </div>
                 </div>
 
-                <div class="hero-showcase" aria-label="Demonstrações funcionando agora">
+                <div class="hero-showcase">
                     <div class="showcase-head">
-                        <span>Testar agora no navegador</span>
-                        <span class="status-online">No ar</span>
+                        <span>Produtos em Destaque Hoje</span>
+                        <span style="color:var(--accent); font-weight:800;">● Prontos</span>
                     </div>
-                    <a href="https://jonasskynet-eng.github.io/cine-pro-tv-2026/" target="_blank" rel="noopener" class="demo-link-row">
+                    <a href="#comercial" class="demo-link-row">
                         <div>
-                            <div class="demo-name">CinePro TV 2026</div>
-                            <div class="demo-meta">Player leve (160 KB), Mosaico, Guia XMLTV e Controle QR</div>
+                            <div class="demo-name">Sistema Comercial PDV & Estoque</div>
+                            <div class="demo-meta">Caixa rápido, código de barras e PIX dinâmico</div>
                         </div>
-                        <span class="demo-arrow">Abrir ↗</span>
+                        <span class="demo-arrow">R$ 150 ↗</span>
                     </a>
-                    <a href="https://jonasskynet-eng.github.io/central-radios-pro/" target="_blank" rel="noopener" class="demo-link-row">
+                    <a href="https://meli.la/2Uuzpmf" target="_blank" rel="noopener" class="demo-link-row" style="border-color:rgba(255, 230, 0, 0.4);">
                         <div>
-                            <div class="demo-name">RádioPro Brasil</div>
-                            <div class="demo-meta">28 rádios FM brasileiras ao vivo + Bluetooth do carro</div>
+                            <div class="demo-name">⚡ Inversor Senoidal 1000W 12V/110V</div>
+                            <div class="demo-meta">Oficial Mercado Livre • Entrega rápida</div>
                         </div>
-                        <span class="demo-arrow">Abrir ↗</span>
+                        <span class="demo-arrow" style="color:#ffe600;">Ver Oferta ↗</span>
                     </a>
-                    <a href="https://jonasskynet-eng.github.io/central-radios-pro/?loja=1" target="_blank" rel="noopener" class="demo-link-row">
+                    <a href="#streaming" class="demo-link-row">
                         <div>
-                            <div class="demo-name">Modo Som Ambiente para Lojas</div>
-                            <div class="demo-meta">Tela travada para balcão de mercados, clínicas e barbearias</div>
+                            <div class="demo-name">CinePro TV 2026 (780+ canais HD)</div>
+                            <div class="demo-meta">Smart TV, Celular ou PC sem travamento</div>
                         </div>
-                        <span class="demo-arrow">Testar ↗</span>
+                        <span class="demo-arrow">R$ 30 ↗</span>
                     </a>
-                    <a href="https://jonasskynet-eng.github.io/windows-boost-pro/vitrine.html" target="_blank" rel="noopener" class="demo-link-row">
+                    <a href="#windows" class="demo-link-row">
                         <div>
-                            <div class="demo-name">⚡ Windows Boost Pro (Versão LITE &amp; PRO)</div>
-                            <div class="demo-meta">Otimização Win 10/11, Bancada 6 Etapas, 131 Drivers, Nuvem Drive e Laudo PDF</div>
+                            <div class="demo-name">Suíte Windows Boost Pro</div>
+                            <div class="demo-meta">Otimização completa, drivers e laudo PDF</div>
                         </div>
-                        <span class="demo-arrow">Abrir ↗</span>
+                        <span class="demo-arrow">R$ 97 ↗</span>
                     </a>
-                    <div class="showcase-foot">
-                        <span>100% Web • Sem instalar programas</span>
-                        <span>Entrega pronta para uso</span>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="sistemas">
+        <!-- SEÇÃO 1: SISTEMAS COMERCIAIS & AUTOMAÇÃO -->
+        <section id="comercial">
             <div class="container">
                 <div class="section-head">
-                    <h2 class="section-title">TV e Rádios para Casa — a partir de R$ 30</h2>
+                    <span class="section-tag">Sistemas Próprios & Automação</span>
+                    <h2 class="section-title">Modernize seu Comércio ou Negócio Local</h2>
                     <p class="section-desc">
-                        Cada projeto abre direto no navegador da Smart TV, celular ou computador sem mensalidade pesada. Teste ao vivo antes de pedir a sua versão.
+                        Sistemas rápidos que não travam, sem mensalidades abusivas. Você compra uma vez, recebe instalado e passa a controlar suas vendas pelo celular ou computador.
                     </p>
                 </div>
 
-                <div class="projects-list" id="modelos">
+                <div class="projects-list">
                     <article class="project-panel">
                         <div>
-                            <span class="project-tag">Sistema no ar • Demonstração aberta</span>
-                            <h3>CinePro TV 2026</h3>
-                            <p>Central de TV para assistir em casa com carregamento rápido, busca por nome ou número e troca de canal pelo celular via código QR ou voz.</p>
+                            <span class="project-tag comercial">Mais Vendido para Comércio</span>
+                            <h3>Sistema Comercial PDV & Controle de Estoque</h3>
+                            <p>Frente de caixa ágil para mercadinhos, adegas, oficinas e lojas de bairro. Registra vendas no código de barras e calcula troco na hora.</p>
                             <ul class="feature-bullets">
-                                <li>Modo Mosaico para assistir até 4 canais juntos</li>
-                                <li>Guia de programação real atualizado todos os dias</li>
-                                <li>Categoria de recentes e retomada automática do último canal</li>
+                                <li>Recebimento instantâneo via QR Code PIX dinâmico</li>
+                                <li>Controle de estoque em tempo real com alerta de baixa</li>
+                                <li>Fechamento de caixa diário e comprovante de venda</li>
+                                <li>Funciona offline no computador ou notebook</li>
                             </ul>
                         </div>
                         <div class="panel-foot">
-                            <span class="price-hint">A partir de R$ 30</span>
-                            <a href="https://jonasskynet-eng.github.io/cine-pro-tv-2026/" target="_blank" rel="noopener" class="btn-secondary" style="padding:8px 14px; font-size:13px;">Ver ao vivo ↗</a>
+                            <div class="price-tag">
+                                <span class="price-label">Pagamento Único</span>
+                                <span class="price-value">R$ 150,00</span>
+                            </div>
+                            <button type="button" class="btn-primary" onclick="selecionarModelo('Sistema Comercial PDV & Controle de Estoque', 150)">Garantir no PIX</button>
                         </div>
                     </article>
 
                     <article class="project-panel">
                         <div>
-                            <span class="project-tag">Sistema no ar • Demonstração aberta</span>
-                            <h3>Central de Rádios &amp; Som Ambiente</h3>
-                            <p>Leitor de rádios FM brasileiras com visual de estúdio em apenas 39 KB. Ideal para ouvir em casa, no trânsito ou no som do comércio.</p>
+                            <span class="project-tag">Atendente Inteligente 24h</span>
+                            <h3>Robô de WhatsApp 24/7 com Inteligência Artificial</h3>
+                            <p>Atenda seus clientes dia e noite mesmo quando a loja estiver fechada. Qualifica o interesse, responde dúvidas e envia orçamentos.</p>
                             <ul class="feature-bullets">
-                                <li>Botão Modo Loja para travar troca acidental no balcão</li>
-                                <li>Funciona com tela bloqueada e comandos no carro</li>
-                                <li>Timer de desligamento e lista para rádios personalizadas</li>
+                                <li>Hospedado na nuvem 24 horas por dia sem precisar deixar o PC ligado</li>
+                                <li>Banco de dados seguro salvando o contato de todos os clientes</li>
+                                <li>Disparo de catálogos e links oficiais no automático</li>
+                                <li>Configuração completa com o número oficial do seu negócio</li>
                             </ul>
                         </div>
                         <div class="panel-foot">
-                            <span class="price-hint">A partir de R$ 30</span>
-                            <a href="https://jonasskynet-eng.github.io/central-radios-pro/" target="_blank" rel="noopener" class="btn-secondary" style="padding:8px 14px; font-size:13px;">Ver ao vivo ↗</a>
+                            <div class="price-tag">
+                                <span class="price-label">Implantação Completa</span>
+                                <span class="price-value">R$ 250,00</span>
+                            </div>
+                            <button type="button" class="btn-primary" onclick="selecionarModelo('Robô de WhatsApp 24/7 com IA na Nuvem', 250)">Contratar Robô</button>
                         </div>
                     </article>
 
                     <article class="project-panel">
                         <div>
-                            <span class="project-tag sob-medida">Para uso em casa e família</span>
-                            <h3>TV Segura (Infantil ou Temática)</h3>
-                            <p>Versão fechada com apenas canais selecionados — só desenhos educativos ou só conteúdo religioso/esportes/filmes — segura para crianças e idosos.</p>
+                            <span class="project-tag">Som Ambiente Comercial</span>
+                            <h3>Central RadioPro para Lojas & Mercados</h3>
+                            <p>Toque música agradável no seu estabelecimento com 45+ rádios ao vivo e vinhetas com as ofertas do seu comércio tocando automaticamente.</p>
                             <ul class="feature-bullets">
-                                <li>Interface simples com botões grandes e fáceis de ler</li>
-                                <li>Sem risco de abrir canais indesejados</li>
-                                <li>Instalável direto na tela inicial do celular ou tablet</li>
+                                <li>Modo Loja que bloqueia troca indevida no balcão</li>
+                                <li>Vinhetas promocionais personalizadas da sua loja</li>
+                                <li>Conexão simples no som Bluetooth ou caixa de som</li>
                             </ul>
                         </div>
                         <div class="panel-foot">
-                            <span class="price-hint">Para casa • R$ 60+</span>
-                            <button type="button" class="btn-secondary" style="padding:8px 14px; font-size:13px;" onclick="selecionarModelo('Kit Família: TV Segura + Rádios', 60)">Escolher este</button>
+                            <div class="price-tag">
+                                <span class="price-label">Assinatura Mensal</span>
+                                <span class="price-value">R$ 90,00/mês</span>
+                            </div>
+                            <a href="https://jonasskynet-eng.github.io/central-radios-pro/?loja=1" target="_blank" rel="noopener" class="btn-secondary">Testar Grátis ↗</a>
+                        </div>
+                    </article>
+
+                    <article class="project-panel" style="border-color:var(--accent);">
+                        <div>
+                            <span class="project-tag" style="background:var(--accent-tint); padding:3px 8px; border-radius:6px;">SUPER COMBO 3 EM 1</span>
+                            <h3>Combo Modernização Total do Comércio</h3>
+                            <p>O pacote definitivo para você ter o comércio mais organizado e moderno da sua região com economia total.</p>
+                            <ul class="feature-bullets">
+                                <li>Sistema PDV Completo + Estoque + PIX (Vitalício)</li>
+                                <li>Robô de Atendimento WhatsApp 24/7 Configurado</li>
+                                <li>Central RadioPro com Vinhetas da Loja</li>
+                            </ul>
+                        </div>
+                        <div class="panel-foot">
+                            <div class="price-tag">
+                                <span class="price-label">De R$ 490 por</span>
+                                <span class="price-value" style="color:var(--accent);">R$ 350,00</span>
+                            </div>
+                            <button type="button" class="btn-primary" onclick="selecionarModelo('Combo Comércio 3 em 1 (PDV + Robô WhatsApp + RadioPro)', 350)">Pedir Combo</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: ACHADINHOS OFICIAIS MERCADO LIVRE -->
+        <section id="achadinhos" style="background-color:rgba(18, 22, 31, 0.4);">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-tag" style="color:#ffe600;">Vitrine de Afiliado Oficial</span>
+                    <h2 class="section-title">🛍️ Achadinhos & Ferramentas Recomendadas</h2>
+                    <p class="section-desc">
+                        Produtos físicos de alta qualidade selecionados a dedo pelo Jonas. Comprando pelos nossos links você garante desconto oficial e a segurança de entrega do Mercado Livre.
+                    </p>
+                </div>
+
+                <div class="meli-banner">
+                    <div>
+                        <div class="meli-badge">📦 Vitrine Oficial do Jonas no Mercado Livre</div>
+                        <h3 style="color:#f4f1ea; font-size:18px; margin-top:4px;">Acesse todas as listas, coleções e promoções em tempo real</h3>
+                        <p style="color:var(--ink-secondary); font-size:13px; margin-top:2px;">Entrega Full rápida para todo o Brasil com garantia Mercado Pago.</p>
+                    </div>
+                    <a href="https://www.mercadolivre.com.br/social/detonadormendona" target="_blank" rel="noopener" class="btn-meli">
+                        Ver Vitrine Completa ↗
+                    </a>
+                </div>
+
+                <div class="projects-list-3">
+                    <article class="project-panel">
+                        <div>
+                            <span class="project-tag meli">Alta Potência • Emergência</span>
+                            <h3>Inversor Senoidal 1000W (12V para 110V)</h3>
+                            <p>Transforme a bateria do seu carro, caminhão ou bateria solar em tomada 110V. Liga ferramentas, geladeira, furadeira e TV.</p>
+                            <ul class="feature-bullets">
+                                <li>Onda Senoidal Pura (não queima aparelhos)</li>
+                                <li>Proteção térmica e contra sobrecarga</li>
+                                <li>Display digital com voltímetro em tempo real</li>
+                            </ul>
+                        </div>
+                        <div class="panel-foot">
+                            <span class="price-label">Mercado Livre Oficial</span>
+                            <a href="https://meli.la/2Uuzpmf" target="_blank" rel="noopener" class="btn-meli" style="padding:9px 14px; font-size:13px;">Comprar Oferta ↗</a>
                         </div>
                     </article>
 
                     <article class="project-panel">
                         <div>
-                            <span class="project-tag sob-medida">Sob medida para comércios</span>
-                            <h3>TV Corporativa para Lojas &amp; Clínicas</h3>
-                            <p>Painel de parede com modo tela limpa (?kiosk=1) para salas de espera, barbearias e lanchonetes com a marca e cores do seu negócio.</p>
+                            <span class="project-tag meli">Áudio Profissional</span>
+                            <h3>Microfone Lapela sem Fio Duplo para Celular</h3>
+                            <p>Grave vídeos, podcasts e reuniões com som cristalino de estúdio sem nenhum chiado ou ruído de fundo.</p>
                             <ul class="feature-bullets">
-                                <li>Abre direto em tela cheia sem menus nem distrações</li>
-                                <li>Troca rápida por controle remoto no celular do gerente</li>
-                                <li>Entrega em link próprio ou pacote pronto offline</li>
+                                <li>Conexão sem fio Plug &amp; Play instantânea</li>
+                                <li>Cancelamento de ruído inteligente integrado</li>
+                                <li>Bateria de longa duração com case recarregável</li>
                             </ul>
                         </div>
                         <div class="panel-foot">
-                            <span class="price-hint">Comercial • R$ 150+</span>
-                            <button type="button" class="btn-secondary" style="padding:8px 14px; font-size:13px;" onclick="selecionarModelo('TV Corporativa e Som para Lojas', 150)">Escolher este</button>
+                            <span class="price-label">Mercado Livre Oficial</span>
+                            <a href="https://www.mercadolivre.com.br/social/detonadormendona" target="_blank" rel="noopener" class="btn-meli" style="padding:9px 14px; font-size:13px;">Ver no ML ↗</a>
                         </div>
                     </article>
 
                     <article class="project-panel">
                         <div>
-                            <span class="project-tag">Sistema no ar • Versão Essencial (Mais Básica)</span>
-                            <h3>⚡ Windows Boost LITE (Otimização Segura)</h3>
-                            <p>Versão leve e 100% segura para deixar PCs e notebooks Windows 10/11 mais rápidos no dia a dia, sem risco de mexer em configurações avançadas.</p>
+                            <span class="project-tag meli">Super Ferramenta</span>
+                            <h3>Mini Soprador Turbo & Aspirador Portátil</h3>
+                            <p>Vento ultra potente para limpeza de computadores, teclados, painel de carro, churrasqueiras e secagem rápida.</p>
                             <ul class="feature-bullets">
-                                <li>Modo Windows 10 &amp; 11 Bem Liso + Limpeza de Memória RAM</li>
-                                <li>Otimizador de Jogos + Teste de Ping DNS ao vivo</li>
-                                <li>Assistente de Defeitos + App PWA para PC, Notebook, Mac e Celular</li>
+                                <li>Motor brushless de alta rotação (100.000 RPM)</li>
+                                <li>Recarregável via USB Tipo-C</li>
+                                <li>Bicos direcionadores inclusos</li>
                             </ul>
                         </div>
                         <div class="panel-foot">
-                            <span class="price-hint">A partir de R$ 30</span>
-                            <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                                <a href="https://jonasskynet-eng.github.io/windows-boost-pro/?edicao=lite" target="_blank" rel="noopener" class="btn-secondary" style="padding:8px 12px; font-size:13px;">Testar LITE ↗</a>
-                                <button type="button" class="btn-secondary" style="padding:8px 12px; font-size:13px;" onclick="selecionarModelo('Windows Boost LITE (Otimização Segura)', 30)">Escolher</button>
+                            <span class="price-label">Mercado Livre Oficial</span>
+                            <a href="https://www.mercadolivre.com.br/social/detonadormendona" target="_blank" rel="noopener" class="btn-meli" style="padding:9px 14px; font-size:13px;">Ver no ML ↗</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: STREAMING & CINEPRO TV -->
+        <section id="streaming">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-tag">Streaming & Entretenimento</span>
+                    <h2 class="section-title">CinePro TV 2026 — 780+ Canais em HD</h2>
+                    <p class="section-desc">
+                        Assista a canais abertos, filmes, séries e esportes direto no navegador da sua Smart TV, TV Box, celular ou PC sem travamentos.
+                    </p>
+                </div>
+
+                <div class="projects-list">
+                    <article class="project-panel">
+                        <div>
+                            <span class="project-tag">Demonstração Aberta</span>
+                            <h3>CinePro TV 2026 (Player Híbrido)</h3>
+                            <p>Carregamento ultrarrápido (apenas 160 KB), busca inteligente por nome ou número e controle remoto via celular com código QR.</p>
+                            <ul class="feature-bullets">
+                                <li>Modo Mosaico: Assista até 4 canais ao mesmo tempo na tela</li>
+                                <li>Guia de programação real atualizado automaticamente</li>
+                                <li>780+ canais auditados com qualidade de imagem limpa</li>
+                            </ul>
+                        </div>
+                        <div class="panel-foot">
+                            <div class="price-tag">
+                                <span class="price-label">A partir de</span>
+                                <span class="price-value">R$ 30,00</span>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <a href="https://jonasskynet-eng.github.io/cine-pro-tv-2026/" target="_blank" rel="noopener" class="btn-secondary" style="padding:8px 12px; font-size:13px;">Ver ao vivo ↗</a>
+                                <button type="button" class="btn-primary" style="padding:8px 14px; font-size:13px;" onclick="selecionarModelo('CinePro TV 2026 (Assinatura Residencial)', 30)">Pedir Acesso</button>
                             </div>
                         </div>
                     </article>
 
                     <article class="project-panel">
                         <div>
-                            <span class="project-tag sob-medida">Sistema no ar • Bancada Técnica Completa</span>
-                            <h3>👑 Windows Boost PRO (Versão Completa)</h3>
-                            <p>Suíte profissional completa para assistência técnica e manutenção de PCs/Notebooks: roda direto do PenDrive, no navegador, Mac ou celular e gera Laudo em PDF.</p>
+                            <span class="project-tag comercial">Para Empresas e Recepções</span>
+                            <h3>TV Corporativa para Clínicas, Barbearias & Lojas</h3>
+                            <p>Painel de parede com modo tela limpa sem menus, rodando na TV da sala de espera com a marca e cores do seu comércio.</p>
                             <ul class="feature-bullets">
-                                <li>Bancada de Hardware em 6 Etapas + Laudo PDF &amp; envio no WhatsApp</li>
-                                <li>Reconhecimento automático do mesmo PC pós-formatação + Backup no Google Drive</li>
-                                <li>131 Drivers Reais, Kit Ninite (22 apps), Chaves da BIOS e Gerador de Chaves PRO</li>
+                                <li>Controle de canais no celular do recepcionista ou gerente</li>
+                                <li>Sem propagandas invasivas de terceiros</li>
+                                <li>Funciona direto pelo navegador da TV</li>
                             </ul>
                         </div>
                         <div class="panel-foot">
-                            <span class="price-hint">Completo • R$ 150</span>
-                            <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                                <a href="https://jonasskynet-eng.github.io/windows-boost-pro/vitrine.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:8px 12px; font-size:13px;">Ver Vitrine ↗</a>
-                                <button type="button" class="btn-secondary" style="padding:8px 12px; font-size:13px;" onclick="selecionarModelo('Windows Boost PRO (Bancada Completa / Atendimento)', 150)">Escolher</button>
+                            <div class="price-tag">
+                                <span class="price-label">Instalação Comercial</span>
+                                <span class="price-value">R$ 150,00</span>
+                            </div>
+                            <button type="button" class="btn-primary" style="padding:8px 14px; font-size:13px;" onclick="selecionarModelo('TV Corporativa para Comércios & Clínicas', 150)">Instalar na Loja</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4: WINDOWS BOOST PRO -->
+        <section id="windows">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-tag">Manutenção & Otimização de PC</span>
+                    <h2 class="section-title">⚡ Suíte Windows Boost Pro</h2>
+                    <p class="section-desc">
+                        Deixe qualquer computador ou notebook Windows 10/11 rápido e liso como novo em minutos, sem precisar pagar formatação cara.
+                    </p>
+                </div>
+
+                <div class="projects-list">
+                    <article class="project-panel">
+                        <div>
+                            <span class="project-tag">Uso Pessoal & Doméstico</span>
+                            <h3>⚡ Windows Boost LITE</h3>
+                            <p>Otimização 100% segura para destravar computadores lentos e acelerar jogos sem risco de mexer no sistema.</p>
+                            <ul class="feature-bullets">
+                                <li>Limpeza profunda de arquivos temporários e memória RAM</li>
+                                <li>Otimizador de ping para jogos online</li>
+                                <li>Diagnóstico rápido de problemas comuns</li>
+                            </ul>
+                        </div>
+                        <div class="panel-foot">
+                            <div class="price-tag">
+                                <span class="price-label">Licença Simples</span>
+                                <span class="price-value">R$ 30,00</span>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <a href="https://jonasskynet-eng.github.io/windows-boost-pro/?edicao=lite" target="_blank" rel="noopener" class="btn-secondary" style="padding:8px 12px; font-size:13px;">Testar ↗</a>
+                                <button type="button" class="btn-primary" style="padding:8px 14px; font-size:13px;" onclick="selecionarModelo('Windows Boost LITE (Otimização Segura)', 30)">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-panel">
+                        <div>
+                            <span class="project-tag comercial">Bancada Técnica Profissional</span>
+                            <h3>👑 Windows Boost PRO (Técnicos & Assistências)</h3>
+                            <p>Suíte completa para técnicos de informática: roda do PenDrive, faz pós-formatação automática, instala 131 drivers e gera laudo em PDF.</p>
+                            <ul class="feature-bullets">
+                                <li>Bancada em 6 Etapas com diagnóstico SMART do HD/SSD</li>
+                                <li>Instalador em lote estilo Ninite (22 programas essenciais)</li>
+                                <li>Backup de drivers e geração de laudo técnico para o cliente</li>
+                            </ul>
+                        </div>
+                        <div class="panel-foot">
+                            <div class="price-tag">
+                                <span class="price-label">Licença Completa</span>
+                                <span class="price-value">R$ 150,00</span>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <a href="https://jonasskynet-eng.github.io/windows-boost-pro/vitrine.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:8px 12px; font-size:13px;">Vitrine ↗</a>
+                                <button type="button" class="btn-primary" style="padding:8px 14px; font-size:13px;" onclick="selecionarModelo('Windows Boost PRO (Bancada Completa / Técnicos)', 150)">Garantir PRO</button>
                             </div>
                         </div>
                     </article>
@@ -711,56 +976,51 @@
             </div>
         </section>
 
+        <!-- SEÇÃO 5: MONTADOR DE PEDIDO / PAGAMENTO NO PIX -->
         <section id="orcamento">
             <div class="container">
                 <div class="section-head">
-                    <h2 class="section-title">Monte seu pedido a partir de R$ 30</h2>
+                    <span class="section-tag">Pagamento Direto via PIX</span>
+                    <h2 class="section-title">Faça seu Pedido e Combine a Entrega</h2>
                     <p class="section-desc">
-                        Escolha a opção ideal para sua casa ou comércio, coloque seu nome (opcional) e envie direto para combinar no WhatsApp.
+                        Selecione o produto desejado abaixo, coloque seu nome e clique para enviar direto no WhatsApp do Jonas para receber o acesso na hora.
                     </p>
                 </div>
 
                 <div class="quote-box">
                     <div class="quote-options" id="quoteOptions">
-                        <button type="button" class="quote-opt selected" data-name="TV e Rádio em Casa (Acesso Prático)" data-price="30" onclick="selecionarOpcao(this)">
+                        <button type="button" class="quote-opt selected" data-name="Sistema Comercial PDV & Controle de Estoque" data-price="150" onclick="selecionarOpcao(this)">
                             <div>
-                                <div class="quote-opt-title">TV &amp; Rádio em Casa (Acesso Prático)</div>
-                                <div class="quote-opt-sub">Canais abertos + 28 rádios FM no celular, PC ou Smart TV</div>
-                            </div>
-                            <span class="quote-opt-price">R$ 30</span>
-                        </button>
-                        <button type="button" class="quote-opt" data-name="Kit Família: TV Segura + Rádios" data-price="60" onclick="selecionarOpcao(this)">
-                            <div>
-                                <div class="quote-opt-title">Kit Família: TV Segura + Rádios</div>
-                                <div class="quote-opt-sub">Canais selecionados para crianças/família e atalho no aparelho</div>
-                            </div>
-                            <span class="quote-opt-price">R$ 60</span>
-                        </button>
-                        <button type="button" class="quote-opt" data-name="Central Completa CinePro TV em Casa" data-price="120" onclick="selecionarOpcao(this)">
-                            <div>
-                                <div class="quote-opt-title">Central Completa CinePro TV em Casa</div>
-                                <div class="quote-opt-sub">Mosaico, Guia XMLTV, controle QR no celular e suporte completo</div>
-                            </div>
-                            <span class="quote-opt-price">R$ 120</span>
-                        </button>
-                        <button type="button" class="quote-opt" data-name="TV Corporativa e Som para Lojas" data-price="150" onclick="selecionarOpcao(this)">
-                            <div>
-                                <div class="quote-opt-title">TV Corporativa &amp; Som para Lojas</div>
-                                <div class="quote-opt-sub">Modo tela limpa para comércios com logo personalizado</div>
+                                <div class="quote-opt-title">🏪 Sistema Comercial PDV &amp; Estoque</div>
+                                <div class="quote-opt-sub">Caixa rápido, código de barras e PIX dinâmico (Vitalício)</div>
                             </div>
                             <span class="quote-opt-price">R$ 150</span>
                         </button>
-                        <button type="button" class="quote-opt" data-name="Windows Boost LITE (Otimização Segura)" data-price="30" onclick="selecionarOpcao(this)">
+                        <button type="button" class="quote-opt" data-name="Robô de WhatsApp 24/7 com IA na Nuvem" data-price="250" onclick="selecionarOpcao(this)">
                             <div>
-                                <div class="quote-opt-title">⚡ Windows Boost LITE (Otimização Segura)</div>
-                                <div class="quote-opt-sub">Versão básica e segura para deixar Windows 10/11, Jogos e RAM mais rápidos</div>
+                                <div class="quote-opt-title">🤖 Robô de WhatsApp 24/7 com IA</div>
+                                <div class="quote-opt-sub">Atendimento automático dia e noite na nuvem com banco de leads</div>
+                            </div>
+                            <span class="quote-opt-price">R$ 250</span>
+                        </button>
+                        <button type="button" class="quote-opt" data-name="Combo Comércio 3 em 1 (PDV + Robô WhatsApp + RadioPro)" data-price="350" onclick="selecionarOpcao(this)">
+                            <div>
+                                <div class="quote-opt-title">🔥 Combo Comércio 3 em 1 (Super Desconto)</div>
+                                <div class="quote-opt-sub">Sistema PDV + Robô de WhatsApp + Central RadioPro para Lojas</div>
+                            </div>
+                            <span class="quote-opt-price">R$ 350</span>
+                        </button>
+                        <button type="button" class="quote-opt" data-name="CinePro TV 2026 (Assinatura Residencial)" data-price="30" onclick="selecionarOpcao(this)">
+                            <div>
+                                <div class="quote-opt-title">📺 CinePro TV 2026 (Acesso Residencial)</div>
+                                <div class="quote-opt-sub">780+ canais abertos, filmes e séries em HD no celular/Smart TV</div>
                             </div>
                             <span class="quote-opt-price">R$ 30</span>
                         </button>
-                        <button type="button" class="quote-opt" data-name="Windows Boost PRO (Bancada Completa / Atendimento)" data-price="150" onclick="selecionarOpcao(this)">
+                        <button type="button" class="quote-opt" data-name="Windows Boost PRO (Bancada Completa / Técnicos)" data-price="150" onclick="selecionarOpcao(this)">
                             <div>
-                                <div class="quote-opt-title">👑 Windows Boost PRO (Bancada Completa / Atendimento)</div>
-                                <div class="quote-opt-sub">6 Etapas de Hardware, 131 Drivers, Backup Google Drive, Kit Ninite e Laudo PDF</div>
+                                <div class="quote-opt-title">👑 Windows Boost PRO (Bancada Completa)</div>
+                                <div class="quote-opt-sub">Suíte para técnicos de informática com 131 drivers e laudo PDF</div>
                             </div>
                             <span class="quote-opt-price">R$ 150</span>
                         </button>
@@ -768,10 +1028,10 @@
 
                     <div class="quote-summary">
                         <div>
-                            <div class="quote-total-label">Valor inicial estimado (sem mensalidade obrigatória)</div>
-                            <div class="quote-total-value" id="quotePrice">R$ 30</div>
+                            <div class="quote-total-label">Valor total do pedido</div>
+                            <div class="quote-total-value" id="quotePrice">R$ 150</div>
                         </div>
-                        <input type="text" id="clientBizInput" class="input-client" placeholder="Seu nome, família ou nome da loja (opcional)">
+                        <input type="text" id="clientBizInput" class="input-client" placeholder="Seu nome ou nome da sua loja (opcional)">
                         <div class="quote-preview" id="quotePreview"></div>
                         <a id="btnWhatsAppOrder" href="https://wa.me/5511966707293" target="_blank" rel="noopener" class="btn-primary" style="width:100%; justify-content:center;">💬 Enviar Pedido no WhatsApp</a>
                         <div class="quote-actions-sec">
@@ -779,7 +1039,7 @@
                             <button type="button" id="btnCopyOrder" class="btn-secondary" onclick="copiarPedido()">📋 Copiar Mensagem</button>
                         </div>
                         <div class="quote-contact-line">
-                            Atendimento direto: <a href="https://wa.me/5511966707293" target="_blank" rel="noopener">(11) 96670-7293</a> • <a href="mailto:jonas.skynet@gmail.com">jonas.skynet@gmail.com</a>
+                            Atendimento pessoal com Jonas: <a href="https://wa.me/5511966707293" target="_blank" rel="noopener">(11) 96670-7293</a>
                         </div>
                     </div>
                 </div>
@@ -787,27 +1047,32 @@
         </section>
     </main>
 
+    <!-- BOTÃO FLUTUANTE DE WHATSAPP -->
+    <a href="https://wa.me/5511966707293?text=Ol%C3%A1%20Jonas%2C%20vi%20sua%20loja%20virtual%20e%20quero%20mais%20informa%C3%A7%C3%B5es!" target="_blank" rel="noopener" class="btn-whatsapp-floating" aria-label="Falar no WhatsApp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.44 0-2.86-.38-4.11-1.1l-.29-.17-3.12.82.83-3.04-.19-.31a8.19 8.19 0 0 1-1.26-4.44c0-4.54 3.7-8.24 8.24-8.24zm4.8 11.66c-.2-.1-.18-.09-1.25-.62-.26-.13-.45-.2-.64.1-.19.29-.74.92-.9 1.11-.17.19-.33.22-.6.09-.27-.13-1.13-.42-2.16-1.33-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.31.41-.47.14-.15.18-.26.27-.43.09-.18.05-.33-.02-.47-.07-.13-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.35-.26.29-1 1-1 2.43 0 1.44 1.03 2.83 1.18 3.02.14.2 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.32.19 1.82.12.56-.08 1.72-.7 1.96-1.38.24-.67.24-1.25.17-1.38-.07-.12-.26-.19-.53-.29z"/>
+        </svg>
+        <span>Falar com Jonas</span>
+    </a>
+
     <footer>
         <div class="container footer-row">
-            <span>Jonas Digital • Sistemas Web Leves &amp; Automação</span>
-            <span class="footer-links">
-                <a href="https://wa.me/5511966707293" target="_blank" rel="noopener">WhatsApp (11) 96670-7293</a> •
-                <a href="mailto:jonas.skynet@gmail.com">jonas.skynet@gmail.com</a>
-            </span>
+            <span>Jonas Tech Store • Sistemas Web Leves, Automação & Afiliado Oficial</span>
+            <span>Atendimento: (11) 96670-7293 • jonas.skynet@gmail.com</span>
         </div>
     </footer>
 
     <script>
         const CONTATO_WHATS = '5511966707293';
         const CONTATO_EMAIL = 'jonas.skynet@gmail.com';
-        let modeloAtual = 'TV e Rádio em Casa (Acesso Prático)';
-        let valorAtual = 30;
+        let modeloAtual = 'Sistema Comercial PDV & Controle de Estoque';
+        let valorAtual = 150;
 
         function atualizarResumoPedido() {
             const biz = (document.getElementById('clientBizInput').value || '').trim();
             document.getElementById('quotePrice').textContent = `R$ ${valorAtual}`;
             const complemento = biz ? ` para "${biz}"` : '';
-            const mensagem = `Olá, Jonas! Tenho interesse no plano "${modeloAtual}"${complemento} (valor base R$ ${valorAtual}). Quero combinar a entrega.`;
+            const mensagem = `Olá, Jonas! Gostaria de pedir o "${modeloAtual}"${complemento} (valor R$ ${valorAtual}). Quero combinar a entrega via PIX!`;
             document.getElementById('quotePreview').textContent = mensagem;
 
             const btnWhats = document.getElementById('btnWhatsAppOrder');
@@ -816,7 +1081,7 @@
             }
             const btnEmail = document.getElementById('btnEmailOrder');
             if (btnEmail) {
-                const assunto = `Orçamento - ${modeloAtual}${complemento}`;
+                const assunto = `Pedido - ${modeloAtual}${complemento}`;
                 btnEmail.href = `mailto:${CONTATO_EMAIL}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(mensagem)}`;
             }
         }
@@ -825,7 +1090,7 @@
             document.querySelectorAll('.quote-opt').forEach(el => el.classList.remove('selected'));
             btn.classList.add('selected');
             modeloAtual = btn.getAttribute('data-name') || modeloAtual;
-            valorAtual = parseInt(btn.getAttribute('data-price') || '30', 10);
+            valorAtual = parseInt(btn.getAttribute('data-price') || '150', 10);
             atualizarResumoPedido();
         }
 
@@ -856,4 +1121,3 @@
     </script>
 </body>
 </html>
-
