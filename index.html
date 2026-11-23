@@ -1051,11 +1051,10 @@
                         <div class="quote-preview" id="quotePreview"></div>
                         <a id="btnWhatsAppOrder" href="https://wa.me/5511966707293" target="_blank" rel="noopener" class="btn-primary" style="width:100%; justify-content:center;">💬 Enviar Pedido no WhatsApp</a>
                         <div class="quote-actions-sec">
-                            <a id="btnEmailOrder" href="mailto:jonas.skynet@gmail.com" class="btn-secondary">✉️ Enviar por E-mail</a>
-                            <button type="button" id="btnCopyOrder" class="btn-secondary" onclick="copiarPedido()">📋 Copiar Mensagem</button>
+                            <button type="button" id="btnCopyOrder" class="btn-secondary" style="width:100%; justify-content:center;" onclick="copiarPedido()">📋 Copiar Mensagem do Pedido</button>
                         </div>
                         <div class="quote-contact-line">
-                            Atendimento pessoal com Jonas: <a href="https://wa.me/5511966707293" target="_blank" rel="noopener">(11) 96670-7293</a>
+                            Atendimento pessoal com Jonas no WhatsApp: <a href="https://wa.me/5511966707293" target="_blank" rel="noopener"><strong>(11) 96670-7293</strong></a>
                         </div>
                     </div>
                 </div>
@@ -1074,13 +1073,12 @@
     <footer>
         <div class="container footer-row">
             <span>Jonas Tech Store • Sistemas Web Leves, Automação & Afiliado Oficial</span>
-            <span>Atendimento: (11) 96670-7293 • jonas.skynet@gmail.com</span>
+            <span>Atendimento Oficial no WhatsApp: <a href="https://wa.me/5511966707293" target="_blank" rel="noopener" style="color:var(--accent); font-weight:800;">(11) 96670-7293</a></span>
         </div>
     </footer>
 
     <script>
         const CONTATO_WHATS = '5511966707293';
-        const CONTATO_EMAIL = 'jonas.skynet@gmail.com';
         let modeloAtual = 'Sistema Comercial PDV & Controle de Estoque';
         let valorAtual = 150;
 
@@ -1094,11 +1092,6 @@
             const btnWhats = document.getElementById('btnWhatsAppOrder');
             if (btnWhats) {
                 btnWhats.href = `https://wa.me/${CONTATO_WHATS}?text=${encodeURIComponent(mensagem)}`;
-            }
-            const btnEmail = document.getElementById('btnEmailOrder');
-            if (btnEmail) {
-                const assunto = `Pedido - ${modeloAtual}${complemento}`;
-                btnEmail.href = `mailto:${CONTATO_EMAIL}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(mensagem)}`;
             }
         }
 
